@@ -4,7 +4,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Link, Route } from 'react-router-dom';
 import Header from '../Header/Header';
-import Home from '../../pages/Home/Home';
+
 import Feeling from '../../pages/Feeling/Feeling';
 
 const mapReduxStateToProps = (reduxStore) => ({
@@ -18,13 +18,15 @@ class App extends Component {
       <div className="App">
 
         <Header header={Header}/>
+        <p>-----Page Counter goes here-----</p>
         <Router>
           <div>
-            <Home />
-
+            <br/>
+            <Link to='/feeling'>Take Feedback</Link>
+            <Route path='/feeling' component={Feeling}/>
           </div>
         </Router>
-        
+
       </div>
     );
   }

@@ -1,0 +1,9 @@
+.card{
+    width: 25em;
+    height: auto;
+    display: inline-block;
+}
+
+.nextButton{
+    float: right;
+}
