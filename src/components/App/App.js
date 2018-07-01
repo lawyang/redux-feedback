@@ -14,6 +14,8 @@ import UnderStanding from '../../pages/Understanding/Understanding';
 import Support from '../../pages/Support/Support';
 import CommentPage from '../../pages/Comment/Comment';
 import Home from '../../pages/Home/Home';
+import AdminPage from '../../pages/Admin/Admin';
+
 
 
 const mapReduxStateToProps = (reduxStore) => ({
@@ -39,6 +41,7 @@ class App extends Component {
             <Route path='/support' component={Support}/>
             <Route path='/comment' component={CommentPage}/>
             <Route path='/thankyou' component={ThankYou}/>
+            <Route path='/admin' component={AdminPage}/>
             
           </div>
         </Router>
