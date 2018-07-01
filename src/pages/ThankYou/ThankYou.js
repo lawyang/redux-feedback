@@ -25,10 +25,10 @@ class ThankYou extends Component{
         }
         return(
             <div>
-                <Typography>
-                    <h1>Thank You!!!!!</h1>
+                <Typography variant="display3">
+                    Thank You!!!!!
                 </Typography>
-                <Button className="thankyouButton"  onClick={this.redirect} size="large" color="primary" variant="contained"> New Feedback </Button>
+                <Button className="thankyouButton"  onClick={this.redirect} size="large" color="primary" variant="contained">Submit a New Feedback </Button>
             </div>
         )
     }

@@ -30,7 +30,7 @@ class CommentPage extends Component{
         })
     }
 
-    redirect = function(){
+    redirect = () => {
         this.setState({
             toThankyou: true
         })
@@ -47,7 +47,7 @@ class CommentPage extends Component{
     }
 
     render(){
-        if(this.state.toApp === true){
+        if(this.state.toThankyou === true){
             return <Redirect to="/thankyou" />
         }
         return(
