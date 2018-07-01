@@ -22,11 +22,10 @@ const feedbackReducer = (state = [], action) => {
     console.log(state.feeling);
     console.log(state.understanding);
     console.log(state.support);
-    console.log(state.comment);
     console.log(state);
-    
     return state;
 }
+
 
 
 const storeInstance = createStore(

@@ -23,7 +23,6 @@ class CommentPage extends Component{
         }
     }
 
-
     handleComment = (event) => {
         this.setState({
             comment: event.target.value
@@ -36,17 +35,22 @@ class CommentPage extends Component{
         })
     }
 
+
+    // onclick will dispatch data to reducer
+    // after dispatch then send data via axios to database    
     sendComment = () => {
-        const body = {comment: this.state.comment};
-        const action = {type: 'ADD_COMMENT', payload: body};
-        this.props.dispatch(action);
+        const body = {comment: this.state.comment, feeling: this.props.reduxStore.feedbackReducer.feeling, understanding: this.props.reduxStore.feedbackReducer.understanding, support: this.props.reduxStore.feedbackReducer.support};
+        // const action = {type: 'ADD_COMMENT', payload: body};
+        console.log('this is the thing to send to db',body);
+        // this.props.dispatch(action);
         alert('Your Feedback Has Been Submitted')
         this.redirect();
-        console.log(this.redirect);
-        
     }
 
     render(){
+        console.log( this.props.reduxStore.feedbackReducer.feeling,);
+        
+
         if(this.state.toThankyou === true){
             return <Redirect to="/thankyou" />
         }
