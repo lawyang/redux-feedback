@@ -11,15 +11,15 @@ import logger from 'redux-logger';
 
 const feedbackReducer = (state = [], action) => {
     if(action.type === 'ADD_FEEDBACK'){
-        state.feeling = action.payload;
+        state.feeling = action.payload
     } if (action.type === 'ADD_UNDERSTANDING'){
-        state.understanding = action.payload;
+        state.understanding = action.payload
     } if (action.type === 'ADD_SUPPORT'){
-        state.support === action.payload;
+        state.support = action.payload
     }
-    console.log('feeling:', state.feeling);
-    console.log('understanding', state.understanding);
-    console.log('support', state.support);
+    console.log(state.feeling);
+    console.log(state.understanding);
+    console.log(state.support);
     console.log(state);
     
     return state;
