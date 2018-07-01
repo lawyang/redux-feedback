@@ -37,7 +37,7 @@ class Feeling extends Component {
     // send feeling feedback to the reducer
     sendFeeling = () => {
         const body = {feeling: parseInt(this.state.feeling)};
-        const action = {type: 'ADD_FEEDBACK', payload: body}
+        const action = {type: 'ADD_FEEDBACK', payload: body};
         if (this.state.feeling <= 5){
             console.log(this.state.feeling);
             console.log(body);
@@ -49,9 +49,7 @@ class Feeling extends Component {
             // reroute to next page
             this.setState({
                 toPage: true
-            })
-            console.log('to next page',this.state.toPage);
-            
+            });
         } else {
             console.log('not valid');
             alert('Input Not Valid')

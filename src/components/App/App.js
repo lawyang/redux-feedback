@@ -6,10 +6,11 @@ import { HashRouter as Router, Link, Route } from 'react-router-dom';
 //Components
 import Header from '../Header/Header';
 //Pages
-
 import Feeling from '../../pages/Feeling/Feeling';
 import ThankYou from '../../pages/ThankYou/ThankYou';
 import UnderStanding from '../../pages/Understanding/Understanding';
+import Support from '../../pages/Support/Support';
+
 
 const mapReduxStateToProps = (reduxStore) => ({
   reduxStore
@@ -28,9 +29,10 @@ class App extends Component {
         <Router>
           <div>
             <br/>
-            <Link to='/feeling'>Take Feedback</Link>
+            <Link to='/feeling'><h1>Take Feedback</h1></Link>
             <Route exact path='/feeling' component={Feeling}/>
             <Route exact path='/understanding' component={UnderStanding}/>
+            <Route exact path='/support' component={Support}/>
             
           </div>
         </Router>

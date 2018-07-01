@@ -32,9 +32,23 @@ class Understanding extends Component{
 
     sendUnderstanding = () => {
         const body = {understanding: parseInt(this.state.understanding)};
+        const action = {type: 'ADD_UNDERSTANDING', payload: body};
+        if (this.state.understanding <= 5){
+            console.log(this.state.understanding);
+            this.props.dispatch(action);
+            this.setState({
+                toSupport: true
+            });
+        } else {
+            console.log('not valid for understanding page');
+            alert('Input Not Valid. Please enter an integer from 1 - 5')
+        }
     }
 
     render(){
+        if(this.state.toSupport === true){
+            return <Redirect to="/support" />
+        }
         return(
             <div>
             <Card className="card">
