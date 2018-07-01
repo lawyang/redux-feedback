@@ -10,7 +10,13 @@ import logger from 'redux-logger';
 // store feedback values
 
 const feedbackReducer = (state = [], action) => {
-    console.log('feedback reducer');
+    if(action.type === 'ADD_FEEDBACK'){
+        state.feeling = action.payload;
+    }
+    
+    
+    
+    console.log('feedback reducer', state);
     return state;
 }
 

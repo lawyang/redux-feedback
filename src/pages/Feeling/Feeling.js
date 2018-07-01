@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './feeling.css';
+import { Redirect } from 'react-router-dom';
 
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+
+
 
 // import green from '@material-ui/core/colors/green';
 // import Radio from '@material-ui/core/Radio';
@@ -20,30 +23,48 @@ class Feeling extends Component {
         super()
         this.state = {
             feeling: 0,
+            toPage: false
         }
     }
 
     // on button click
     handleFeeling = (event) => {
             this.setState({
-                feeling: event.target.value
+                feeling: event.target.value,
             })
     }
 
     // send feeling feedback to the reducer
-    sendFeelingToRedux = () => {
+    sendFeeling = () => {
         const body = {feeling: parseInt(this.state.feeling)};
+        const action = {type: 'ADD_FEEDBACK', payload: body}
         if (this.state.feeling <= 5){
             console.log(this.state.feeling);
             console.log(body);
-            console.log('hello');
+            console.log(action);
+            // dispatch to reducer goes here
+            this.props.dispatch(action);
+            //axios post to database goes here
+
+            // reroute to next page
+            this.setState({
+                toPage: true
+            })
+            console.log('to next page',this.state.toPage);
+            
         } else {
             console.log('not valid');
             alert('Input Not Valid')
         }
     }
-    
+
+
+
     render(){
+            if(this.state.toPage === true){
+                return <Redirect to="/understanding" />
+            }
+
         return(
             <div>
                 <Card className="card">
@@ -58,7 +79,7 @@ class Feeling extends Component {
                         <input placeholder="enter here" onChange={this.handleFeeling} />
                     </CardContent>
                     <CardActions>
-                        <Button className="nextButton"  onClick={this.sendFeelingToRedux} size="medium"> Next </Button>
+                        <Button className="nextButton"  onClick={this.sendFeeling} size="medium"> Next </Button>
                     </CardActions>
                 </Card>
             </div>
@@ -66,4 +87,4 @@ class Feeling extends Component {
     }
 }
 
-export default (Feeling);
+export default connect(mapReduxStateToProps)(Feeling);
