@@ -18,11 +18,31 @@ class CommentPage extends Component{
     constructor(){
         super()
         this.state = {
-            comment: 0,
+            comment: '',
             toThankyou: false
         }
     }
 
+
+    handleComment = (event) => {
+        this.setState({
+            comment: event.target.value
+        })
+    }
+
+    redirect = function(){
+        this.setState({
+            toThankyou: true
+        })
+    }
+
+    sendComment = () => {
+        const body = {comment: this.state.comment};
+        const action = {type: 'ADD_COMMENT', payload: body};
+        this.props.dispatch(action);
+        alert('Your Feedback Has Been Submitted')
+        this.redirect();
+    }
 
     render(){
 
@@ -37,13 +57,10 @@ class CommentPage extends Component{
                             Today you are you! That is truer than true! There is no one alive who is you-er than you!   
                         </Typography>
                         <br/>
-                        {/* <input className="commentBox" placeholder="Comment Here" onChange={this.handleSupport} /> */}
-                    
-                    <TextField className="commentBox" placeholder="Comment Here" onChange={this.handleSupport}/>
-                    
+                    <TextField className="commentBox" placeholder="Comment Here" onChange={this.handleComment}/>
                     </CardContent>
                     <CardActions>
-                        <Button className="nextButton"  onClick={this.sendSupport} size="large"> Submit Feeback </Button>
+                        <Button className="nextButton"  onClick={this.sendComment} size="large" color="primary" variant="contained"> Submit Feeback </Button>
                     </CardActions>
                 </Card>
             </div>

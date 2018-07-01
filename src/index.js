@@ -16,10 +16,13 @@ const feedbackReducer = (state = [], action) => {
         state.understanding = action.payload
     } if (action.type === 'ADD_SUPPORT'){
         state.support = action.payload
+    } if (action.type === 'ADD_COMMENT'){
+        state.comment = action.payload
     }
     console.log(state.feeling);
     console.log(state.understanding);
     console.log(state.support);
+    console.log(state.comment);
     console.log(state);
     
     return state;

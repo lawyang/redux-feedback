@@ -8,6 +8,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 const mapReduxStateToProps = (reduxStore) => ({
     reduxStore
@@ -60,7 +62,7 @@ class Understanding extends Component{
                         (No Clue) 1 -- 2 -- 3 -- 4 -- 5 (Einstein)
                     </Typography>
                     <br/>
-                    <input placeholder="enter here" onChange={this.handleUnderstanding} />
+                    <TextField className="understandingBox" placeholder="Comment Here" onChange={this.handleUnderstanding}/>
                 </CardContent>
                 <CardActions>
                     <Button className="nextButton"  onClick={this.sendUnderstanding} size="medium"> Next </Button>
