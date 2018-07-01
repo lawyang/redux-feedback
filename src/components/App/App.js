@@ -3,6 +3,8 @@ import axios from 'axios';
 import './App.css';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Link, Route } from 'react-router-dom';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 //Components
 import Header from '../Header/Header';
 //Pages
@@ -32,7 +34,7 @@ class App extends Component {
           <div>
             <br/>
             <Route exact path='/' component={Home}/>
-            <Route exact path='/feeling' component={Feeling}/>
+            <Route path='/feeling' component={Feeling}/>
             <Route path='/understanding' component={UnderStanding}/>
             <Route path='/support' component={Support}/>
             <Route path='/comment' component={CommentPage}/>

@@ -21,7 +21,7 @@ class ThankYou extends Component{
 
     render(){
         if(this.state.toApp === true){
-            return <Redirect to="/support" />
+            return <Redirect to="/" />
         }
         return(
             <div>
