@@ -10,7 +10,7 @@ class Home extends Component {
             <div>
             <p>this is the homepage</p>
             
-            <Link to='/feeling'>Take Feedback</Link>
+            <Link to='/feeling'><h1>Take Feedback</h1></Link>
             <Route path='/feeling' component={Feeling}/>
 
             </div>

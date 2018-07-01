@@ -42,10 +42,14 @@ class CommentPage extends Component{
         this.props.dispatch(action);
         alert('Your Feedback Has Been Submitted')
         this.redirect();
+        console.log(this.redirect);
+        
     }
 
     render(){
-
+        if(this.state.toApp === true){
+            return <Redirect to="/thankyou" />
+        }
         return(
             <div>
                 <Card className="card">
