@@ -10,6 +10,7 @@ import Feeling from '../../pages/Feeling/Feeling';
 import ThankYou from '../../pages/ThankYou/ThankYou';
 import UnderStanding from '../../pages/Understanding/Understanding';
 import Support from '../../pages/Support/Support';
+import CommentPage from '../../pages/Comment/Comment';
 
 
 const mapReduxStateToProps = (reduxStore) => ({
@@ -33,6 +34,7 @@ class App extends Component {
             <Route exact path='/feeling' component={Feeling}/>
             <Route exact path='/understanding' component={UnderStanding}/>
             <Route exact path='/support' component={Support}/>
+            <Route exact path='/comment' component={CommentPage}/>
             
           </div>
         </Router>

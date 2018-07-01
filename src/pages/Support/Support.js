@@ -8,6 +8,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 const mapReduxStateToProps = (reduxStore) => ({
     reduxStore
@@ -60,7 +62,7 @@ class Support extends Component{
                         (Kill Steals) 1 -- 2 -- 3 -- 4 -- 5 (Hype-Man)
                     </Typography>
                     <br/>
-                    <input placeholder="enter here" onChange={this.handleSupport} />
+                    <TextField className="supportBox" laceholder="enter here" onChange={this.handleSupport} />
                 </CardContent>
                 <CardActions>
                     <Button className="nextButton"  onClick={this.sendSupport} size="medium"> Next </Button>

@@ -8,12 +8,13 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 const mapReduxStateToProps = (reduxStore) => ({
     reduxStore
 })
 
-class Comment extends Component{
+class CommentPage extends Component{
     constructor(){
         super()
         this.state = {
@@ -22,7 +23,7 @@ class Comment extends Component{
         }
     }
 
-    
+
     render(){
 
         return(
@@ -33,13 +34,16 @@ class Comment extends Component{
                             Any Comments you want to leave?
                         </Typography>
                         <Typography className="card" color="textSecondary">
-                            (Kill Steals) 1 -- 2 -- 3 -- 4 -- 5 (Hype-Man)
+                            Today you are you! That is truer than true! There is no one alive who is you-er than you!   
                         </Typography>
                         <br/>
-                        <input placeholder="enter here" onChange={this.handleSupport} />
+                        {/* <input className="commentBox" placeholder="Comment Here" onChange={this.handleSupport} /> */}
+                    
+                    <TextField className="commentBox" placeholder="Comment Here" onChange={this.handleSupport}/>
+                    
                     </CardContent>
                     <CardActions>
-                        <Button className="nextButton"  onClick={this.sendSupport} size="Large"> Submit Feeback </Button>
+                        <Button className="nextButton"  onClick={this.sendSupport} size="large"> Submit Feeback </Button>
                     </CardActions>
                 </Card>
             </div>
@@ -52,4 +56,4 @@ class Comment extends Component{
 
 }
 
-export default connect(mapReduxStateToProps)(Comment);
+export default connect(mapReduxStateToProps)(CommentPage);

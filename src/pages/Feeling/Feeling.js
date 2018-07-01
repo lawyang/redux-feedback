@@ -8,6 +8,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 
 
@@ -74,7 +75,7 @@ class Feeling extends Component {
                             (Help) 1 -- 2 -- 3 -- 4 -- 5 (Great)
                         </Typography>
                         <br/>
-                        <input placeholder="enter here" onChange={this.handleFeeling} />
+                    <TextField className="feelingBox" placeholder="enter here" onChange={this.handleFeeling}/>
                     </CardContent>
                     <CardActions>
                         <Button className="nextButton"  onClick={this.sendFeeling} size="medium"> Next </Button>
