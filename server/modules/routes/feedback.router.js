@@ -23,14 +23,16 @@ router.post('/', (req, res) => {
     console.log('in the POST route');
     console.log('req body', req.body);
     let body = req.body;
-    console.log(body.feeling)
-    const queryText = "INSERT INTO feedback (feeling, understanding, support, comments) VALUES ($1, $2, $3, $4)";
-    pool.query(queryText [body.feeling, body.understanding, body.support, body.comment])
+    console.log('this is body',body);
+    const queryText = "INSERT INTO feedback (feeling, understanding, support, comments) VALUES ($1, $2, $3, $4);";
+    pool.query(queryText, [body.feeling, body.understanding, body.support, body.comment])
         .then((result) => {
             console.log('success POST', result);
+            res.sendStatus(201)
         })
         .catch((error) => {
             console.log('FAILED POST', error);
+            res.sendStatus(500)
         })
 })
 
