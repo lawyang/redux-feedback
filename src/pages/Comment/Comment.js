@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './comment.css'
+import axios from 'axios';
 //card props
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -40,8 +41,9 @@ class CommentPage extends Component{
     // after dispatch then send data via axios to database    
     sendComment = () => {
         const body = {comment: this.state.comment, feeling: this.props.reduxStore.feedbackReducer.feeling, understanding: this.props.reduxStore.feedbackReducer.understanding, support: this.props.reduxStore.feedbackReducer.support};
-        // const action = {type: 'ADD_COMMENT', payload: body};
         console.log('this is the thing to send to db',body);
+        axios.post('api/')
+        
         // this.props.dispatch(action);
         alert('Your Feedback Has Been Submitted')
         this.redirect();
