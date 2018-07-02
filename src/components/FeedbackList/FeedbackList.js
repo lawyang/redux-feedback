@@ -1,45 +1,64 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import axios from 'axios';
-
 import AdminTable from '../AdminTable/AdminTable';
+
+import { withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+
 
 const mapReduxStateToProps = (reduxStore) => ({
     feedback: reduxStore.DataListReducer
 })
 
+const styles = theme => ({
+    root: {
+      width: '100%',
+      marginTop: theme.spacing.unit * 3,
+      overflowX: 'auto',
+    },
+    table: {
+      minWidth: 700,
+    },
+  });
 
 class FeedbackList extends Component{
-    constructor(){
-        super()
-        this.state = {
-        }
-    }
-
-    getFeedback = () => {
-        axios.get('/api/feedback')
-            .then((response) => {
-                const action = {type: 'SET_DATA', payload: response.data};
-                this.props.dispatch(action);
-            })  
-            .catch((error) => {
-                console.log('error 404', error)
-            })
-    }
-
-
-
     render(){
-        this.getFeedback;
+
         return(
             <div>
-                <button onClick={this.getFeedback}>click me</button>
-                <pre>{JSON.stringify(this.props.feedback)}</pre>
-                {this.props.feedback.map((taco, i) => {
-                    return <dataItem key={i} taco={taco} />
-                })}
-                
+                <Paper >
+                    <Table >
+                    <TableHead>
+                        <TableRow>
+                        <TableCell> Feeling </TableCell>
+                        <TableCell> Comprehension </TableCell>
+                        <TableCell> Support </TableCell>
+                        <TableCell>  Comments </TableCell>
+                        <TableCell> Delete </TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {this.props.feedback.map(taco => {
+                            return(
+                            <TableRow key={taco.id}>
+                                <TableCell> {taco.feeling} </TableCell>
+                                <TableCell> {taco.understanding} </TableCell>
+                                <TableCell> {taco.support} </TableCell>
+                                <TableCell> {taco.comments} </TableCell>
+                                <TableCell> <Button className="deleteButton" size="small" color="secondary" variant="contained">Delete</Button> </TableCell>
+                            </TableRow> 
+                            )
+                        })}
+                    </TableBody>
+                    </Table>
+                </Paper>
             </div>
         )
     }

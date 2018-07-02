@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -22,11 +22,9 @@ const styles = theme => ({
 });
 
 function AdminTable(props) {
-  const { classes } = props;
-
   return (
     <div>
-
+      <p>this.props.taco</p>
       <Paper >
         <Table >
           <TableHead>
@@ -47,7 +45,7 @@ function AdminTable(props) {
               {/* return ( */}
                 {/* <TableRow key={n.id}> */}
                 <TableRow >
-                  <TableCell> feeling </TableCell>
+                  <TableCell> this.props.taco. </TableCell>
                   <TableCell> comprehension rating </TableCell>
                   <TableCell> support </TableCell>
                   <TableCell> comments </TableCell>
