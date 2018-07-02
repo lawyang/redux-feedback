@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import AdminTable from '../AdminTable/AdminTable';
 
-import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -16,17 +13,6 @@ import Button from '@material-ui/core/Button';
 const mapReduxStateToProps = (reduxStore) => ({
     feedback: reduxStore.DataListReducer
 })
-
-const styles = theme => ({
-    root: {
-      width: '100%',
-      marginTop: theme.spacing.unit * 3,
-      overflowX: 'auto',
-    },
-    table: {
-      minWidth: 700,
-    },
-  });
 
 class FeedbackList extends Component{
     render(){

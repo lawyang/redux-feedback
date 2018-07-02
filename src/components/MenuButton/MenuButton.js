@@ -1,10 +1,9 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { HashRouter as Router, Link, Route } from 'react-router-dom';
+import { HashRouter as Router, Link } from 'react-router-dom';
 
 
 function MenuButtons(props) {
-  const { classes } = props;
   return (
     <div >
         <Router>
