@@ -29,9 +29,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header header={Header}/>
-
-
-        <p>-----Page Counter goes here-----</p>
         <Router>
           <div>
             <br/>
@@ -42,10 +39,8 @@ class App extends Component {
             <Route path='/comment' component={CommentPage}/>
             <Route path='/thankyou' component={ThankYou}/>
             <Route path='/admin' component={AdminPage}/>
-            
           </div>
         </Router>
-
       </div>
     );
   }

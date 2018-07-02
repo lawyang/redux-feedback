@@ -61,6 +61,11 @@ class CommentPage extends Component{
             <div>
                 <Card className="card">
                     <CardContent>
+                        <Typography>
+                            page 4/4
+                        </Typography>
+                    </CardContent>
+                    <CardContent>
                         <Typography variant="headline" component="h2">
                             Any Comments you want to leave?
                         </Typography>

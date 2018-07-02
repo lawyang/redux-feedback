@@ -55,6 +55,11 @@ class Understanding extends Component{
             <div>
             <Card className="card">
                 <CardContent>
+                    <Typography>
+                        page 2/4
+                    </Typography>
+                </CardContent>
+                <CardContent>
                     <Typography variant="headline" component="h2">
                         How well are you understanding the content?
                     </Typography>

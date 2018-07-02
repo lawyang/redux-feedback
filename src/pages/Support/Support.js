@@ -55,6 +55,11 @@ class Support extends Component{
             <div>
             <Card className="card">
                 <CardContent>
+                    <CardContent>
+                        <Typography>
+                            page 3/4
+                        </Typography>
+                    </CardContent>
                     <Typography variant="headline" component="h2">
                         How well do you feel supported?
                     </Typography>
