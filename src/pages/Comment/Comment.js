@@ -36,7 +36,6 @@ class CommentPage extends Component{
         })
     }
 
-
     // onclick will dispatch data to reducer
     // after dispatch then send data via axios to database    
     sendComment = () => {
@@ -48,6 +47,8 @@ class CommentPage extends Component{
         alert('Your Feedback Has Been Submitted')
         this.redirect();
     }
+
+    
 
     render(){
         console.log( this.props.reduxStore.feedbackReducer.feeling,);

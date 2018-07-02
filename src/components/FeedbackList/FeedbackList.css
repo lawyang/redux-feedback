@@ -8,3 +8,8 @@
       minWidth: 700,
     },
   }); */
+
+  .adminTable{
+    width: 50em;
+    display: inline-block;
+  }

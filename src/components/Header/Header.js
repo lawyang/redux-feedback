@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ButtonAppBar from '../Menu/Menu';
-
+import './header.css';
 
 class Header extends Component {
     render(){

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -8,7 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-
+import './FeedbackList.css';
 
 const mapReduxStateToProps = (reduxStore) => ({
     feedback: reduxStore.DataListReducer
@@ -16,9 +15,8 @@ const mapReduxStateToProps = (reduxStore) => ({
 
 class FeedbackList extends Component{
     render(){
-
         return(
-            <div>
+            <div className="adminTable">
                 <Paper >
                     <Table >
                     <TableHead>

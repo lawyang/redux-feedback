@@ -2,25 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FeedbackList from '../../components/FeedbackList/FeedbackList';
 import axios from 'axios';
-
+import './admin.css';
 
 const mapReduxStateToProps = (reduxStore) => ({
     reduxStore
 })
 
-
 class AdminPage extends Component{
-    constructor(){
-        super()
-        this.state = {
-
-        }
-    }
-
     componentDidMount(){
         this.getFeedback();
     }
 
+    // fetch data from the db through axios GET method
     getFeedback = () => {
         axios.get('/api/feedback')
             .then((response) => {
@@ -35,6 +28,7 @@ class AdminPage extends Component{
     render(){
         return(
             <div>
+                <h1>Admin Page</h1>
                 <FeedbackList />
             </div>
         )
