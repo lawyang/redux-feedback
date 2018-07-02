@@ -26,12 +26,21 @@ const feedbackReducer = (state = [], action) => {
     return state;
 }
 
+const DataListReducer = (state = [], action) => {
+    if (action.type === 'SET_DATA'){
+        state = action.payload;
+    }
+    console.log('datalistreducer', state);
+    return state;
+}
+
 
 
 const storeInstance = createStore(
 
     combineReducers({
-        feedbackReducer
+        feedbackReducer,
+        DataListReducer
     }),
     applyMiddleware(logger)
 );

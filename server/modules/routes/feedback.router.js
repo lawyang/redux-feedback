@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     const queryText = "SELECT * FROM feedback"
     pool.query(queryText)
         .then((result) => {
-            console.log('back from the GET CALL');
+            console.log('back from the GET CALL', result);
             res.send(result.rows);
         })
         .catch((error) => {
