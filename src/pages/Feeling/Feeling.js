@@ -37,7 +37,7 @@ class Feeling extends Component {
 
     // send feeling feedback to the reducer
     sendFeeling = () => {
-        const body = {feeling: parseInt(this.state.feeling)};
+        const body = parseInt(this.state.feeling);
         const action = {type: 'ADD_FEEDBACK', payload: body};
         if (this.state.feeling <= 5){
             console.log(this.state.feeling);

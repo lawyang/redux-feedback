@@ -34,8 +34,6 @@ const DataListReducer = (state = [], action) => {
     return state;
 }
 
-
-
 const storeInstance = createStore(
 
     combineReducers({

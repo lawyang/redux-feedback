@@ -33,7 +33,7 @@ class Support extends Component{
     }
 
     sendSupport = () => {
-        const body = {support: parseInt(this.state.support)};
+        const body = parseInt(this.state.support);
         const action = {type: 'ADD_SUPPORT', payload: body};
         if (this.state.support <= 5){
             console.log(this.state.support);

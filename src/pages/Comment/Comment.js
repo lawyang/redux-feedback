@@ -41,19 +41,19 @@ class CommentPage extends Component{
     sendComment = () => {
         const body = {comment: this.state.comment, feeling: this.props.reduxStore.feedbackReducer.feeling, understanding: this.props.reduxStore.feedbackReducer.understanding, support: this.props.reduxStore.feedbackReducer.support};
         console.log('this is the thing to send to db',body);
-        axios.post('api/')
-        
+        axios.post('/api/feedback', body)
+            .then((response) => {
+                console.log('post successfull')
+                alert('Your Feedback Has Been Submitted')
+                this.redirect();
+            })
+            .catch((error) => {
+                console.log('error posting', error)
+            })
         // this.props.dispatch(action);
-        alert('Your Feedback Has Been Submitted')
-        this.redirect();
     }
 
-    
-
-    render(){
-        console.log( this.props.reduxStore.feedbackReducer.feeling,);
-        
-
+    render(){;
         if(this.state.toThankyou === true){
             return <Redirect to="/thankyou" />
         }

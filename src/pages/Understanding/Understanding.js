@@ -33,7 +33,7 @@ class Understanding extends Component{
     }
 
     sendUnderstanding = () => {
-        const body = {understanding: parseInt(this.state.understanding)};
+        const body = parseInt(this.state.understanding);
         const action = {type: 'ADD_UNDERSTANDING', payload: body};
         if (this.state.understanding <= 5){
             console.log(this.state.understanding);
