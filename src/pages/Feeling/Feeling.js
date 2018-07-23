@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
+import SnackBar from '../../components/ValidateSnackBar/ValidateSnackBar';
 
 
 // import green from '@material-ui/core/colors/green';
@@ -85,6 +86,7 @@ class Feeling extends Component {
                     <CardActions>
                         <Button className="nextButton"  onClick={this.sendFeeling} size="medium"> Next </Button>
                     </CardActions>
+                    <SnackBar />
                 </Card>
             </div>
         )

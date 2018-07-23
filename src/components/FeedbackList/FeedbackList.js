@@ -8,12 +8,28 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import './FeedbackList.css';
+import axios from 'axios';
+
+import Admin from '../../pages/Admin/Admin';
 
 const mapReduxStateToProps = (reduxStore) => ({
     feedback: reduxStore.DataListReducer
 })
 
+
 class FeedbackList extends Component{
+
+    deleteButton = (id) => {
+        axios.delete(`/api/feedback/${id}`)
+            .then((response) => {
+                console.log('delete worked')
+                this.props.getCall()
+            })
+            .catch((error) => {
+                console.log('delete did not work', error);
+            })
+    }
+    
     render(){
         return(
             <div className="adminTable">
@@ -36,7 +52,7 @@ class FeedbackList extends Component{
                                 <TableCell> {taco.understanding} </TableCell>
                                 <TableCell> {taco.support} </TableCell>
                                 <TableCell> {taco.comments} </TableCell>
-                                <TableCell> <Button className="deleteButton" size="small" color="secondary" variant="contained">Delete</Button> </TableCell>
+                                <TableCell> <Button className="deleteButton" onClick={ ()=> this.deleteButton(taco.id)} size="small" color="secondary" variant="contained">Delete</Button> </TableCell>
                             </TableRow> 
                             )
                         })}

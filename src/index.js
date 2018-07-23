@@ -19,10 +19,6 @@ const feedbackReducer = (state = [], action) => {
     } if (action.type === 'ADD_COMMENT'){
         state.comment = action.payload
     }
-    console.log(state.feeling);
-    console.log(state.understanding);
-    console.log(state.support);
-    console.log(state);
     return state;
 }
 
@@ -30,7 +26,6 @@ const DataListReducer = (state = [], action) => {
     if (action.type === 'SET_DATA'){
         state = action.payload;
     }
-    console.log('datalistreducer', state);
     return state;
 }
 
